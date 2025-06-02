@@ -38,7 +38,7 @@ export function NodeDetails({ nodeId }: NodeDetailsProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/src/data/nodes.json')
+    fetch('/data/nodes.json')
       .then((res) => res.json())
       .then((data) => {
         const foundNode = data.find((n: Node) => n.ID === nodeId);

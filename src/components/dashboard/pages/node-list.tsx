@@ -15,31 +15,19 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Search, Trash2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import type { Node } from '@/types/node';
+import { useData } from '@/context/data-context';
 
 type NodeListProps = {
   onNodeSelect: (nodeId: string) => void;
 };
 
 export function NodeList({ onNodeSelect }: NodeListProps) {
-  const [allNodes, setAllNodes] = useState<Node[]>([]);
   const [myNodes, setMyNodes] = useState<Node[]>([]);
-  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedNodes, setSelectedNodes] = useState<string[]>([]);
+  const { nodes: allNodes, loading } = useData();
 
   useEffect(() => {
-    // Load all nodes
-    fetch('/src/data/nodes.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setAllNodes(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error loading nodes:', error);
-        setLoading(false);
-      });
-
     // Load selected nodes from localStorage
     const savedNodes = localStorage.getItem('selectedNodes');
     if (savedNodes) {

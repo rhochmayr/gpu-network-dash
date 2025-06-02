@@ -15,21 +15,21 @@ import {
   ResponsiveContainer,
   PieChart,
   Pie,
-  Cell,
+  Cell
 } from 'recharts';
-import metricsData from '@/data/metrics.json';
+import { useData } from '@/context/data-context';
 
 // Process nodes data for the growth chart
-const processNodesData = () => {
-  return metricsData.Nodes.slice(-30).map(node => ({
+const processNodesData = (metrics: any) => {
+  return metrics.Nodes.slice(-30).map((node: any) => ({
     date: `${node.Month}/${node.Day}`,
     nodes: node.Count
   }));
 };
 
 // Calculate job distribution for the pie chart
-const calculateJobDistribution = () => {
-  const total = metricsData.JobsCompleted.reduce((acc, curr) => acc + curr.Count, 0);
+const calculateJobDistribution = (metrics: any) => {
+  const total = metrics.JobsCompleted.reduce((acc: number, curr: any) => acc + curr.Count, 0);
   return [
     { name: 'AI Training', value: Math.round(total * 0.45) },
     { name: 'Rendering', value: Math.round(total * 0.30) },
@@ -41,8 +41,12 @@ const calculateJobDistribution = () => {
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export function Analytics() {
-  const nodesData = processNodesData();
-  const jobDistribution = calculateJobDistribution();
+  const { metrics } = useData();
+
+  if (!metrics) return null;
+
+  const nodesData = processNodesData(metrics);
+  const jobDistribution = calculateJobDistribution(metrics);
 
   return (
     <div className="space-y-6">
@@ -120,15 +124,15 @@ export function Analytics() {
           <div className="grid gap-4 md:grid-cols-3">
             <div>
               <h4 className="text-sm font-medium text-muted-foreground">Total Jobs</h4>
-              <p className="text-2xl font-bold">{metricsData.TotalJobs.toLocaleString()}</p>
+              <p className="text-2xl font-bold">{metrics.TotalJobs.toLocaleString()}</p>
             </div>
             <div>
               <h4 className="text-sm font-medium text-muted-foreground">Total Nodes</h4>
-              <p className="text-2xl font-bold">{metricsData.TotalNodes.toLocaleString()}</p>
+              <p className="text-2xl font-bold">{metrics.TotalNodes.toLocaleString()}</p>
             </div>
             <div>
               <h4 className="text-sm font-medium text-muted-foreground">Total Modules</h4>
-              <p className="text-2xl font-bold">{metricsData.TotalModules.toLocaleString()}</p>
+              <p className="text-2xl font-bold">{metrics.TotalModules.toLocaleString()}</p>
             </div>
           </div>
         </CardContent>

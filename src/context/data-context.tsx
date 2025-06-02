@@ -55,9 +55,9 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     Promise.all([
-      fetch('/src/data/nodes.json'),
-      fetch('/src/data/metrics.json'),
-      fetch('/src/data/leaderboard.json'),
+      fetch('/data/nodes.json'),
+      fetch('/data/metrics.json'),
+      fetch('/data/leaderboard.json'),
     ])
       .then(async ([nodesRes, metricsRes, leaderboardRes]) => {
         const [nodesData, metricsData, leaderboardData] = await Promise.all([

@@ -42,6 +42,21 @@ npm install
 npm run dev
 ```
 
+## Docker
+
+The project includes a production-ready Docker configuration:
+
+```bash
+# Build the image
+docker build -t gpu-network-dash .
+
+# Run the container
+docker run -p 3000:80 gpu-network-dash
+```
+
+The dashboard will be available at `http://localhost:3000`
+
+
 ## Project Structure
 
 ```
@@ -64,6 +79,7 @@ The dashboard is built with customization in mind:
 - **Components**: Extend `src/components/ui` for custom elements
 - **Data**: Update `src/data` files for your network structure
 - **Charts**: Customize visualizations in respective components
+- **Docker**: Modify `Dockerfile` and `nginx.conf` for deployment needs
 
 ## Contributing
 

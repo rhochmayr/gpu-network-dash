@@ -96,7 +96,7 @@ export function Analytics() {
                     paddingAngle={5}
                     dataKey="value"
                   >
-                    {jobDistribution.map((entry, index) => (
+                    {jobDistribution.map((_, index) => (
                       <Cell
                         key={`cell-${index}`}
                         fill={COLORS[index % COLORS.length]}

@@ -15,13 +15,30 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { useData } from '@/context/data-context';
+import { useState } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function Leaderboard() {
   const { leaderboard, loading } = useData();
+  const [pageSize, setPageSize] = useState<string>("10");
+  const [currentPage, setCurrentPage] = useState(1);
 
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  const totalPages = Math.ceil(leaderboard.length / parseInt(pageSize));
+  const startIndex = (currentPage - 1) * parseInt(pageSize);
+  const endIndex = startIndex + parseInt(pageSize);
+  const paginatedLeaderboard = leaderboard.slice(startIndex, endIndex);
 
   // Calculate total network stats
   const totalEnergy = leaderboard.reduce((sum, entry) => sum + entry.Energy, 0);
@@ -80,7 +97,21 @@ export function Leaderboard() {
       <Card>
         <CardHeader>
           <CardTitle>Top Node Operators</CardTitle>
-          <CardDescription>Ranked by points and performance</CardDescription>
+          <div className="flex items-center justify-between">
+            <CardDescription>Ranked by points and performance</CardDescription>
+            <div className="flex items-center space-x-2">
+              <Select value={pageSize} onValueChange={setPageSize}>
+                <SelectTrigger className="w-[100px]">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="10">10 rows</SelectItem>
+                  <SelectItem value="25">25 rows</SelectItem>
+                  <SelectItem value="50">50 rows</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
         </CardHeader>
         <CardContent>
           <Table>
@@ -95,7 +126,7 @@ export function Leaderboard() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {leaderboard.map((operator) => (
+              {paginatedLeaderboard.map((operator) => (
                 <TableRow key={operator.Rank}>
                   <TableCell className="font-medium">#{operator.Rank}</TableCell>
                   <TableCell className="font-mono text-sm">
@@ -113,6 +144,32 @@ export function Leaderboard() {
               ))}
             </TableBody>
           </Table>
+          <div className="flex items-center justify-between mt-4">
+            <div className="text-sm text-muted-foreground">
+              Showing {startIndex + 1} to {Math.min(endIndex, leaderboard.length)} of {leaderboard.length} entries
+            </div>
+            <div className="flex items-center space-x-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <div className="text-sm">
+                Page {currentPage} of {totalPages}
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
 

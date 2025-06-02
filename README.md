@@ -2,7 +2,7 @@
 
 A modern, feature-rich dashboard template for managing distributed GPU networks, built with React, TypeScript, and Tailwind CSS.
 
-![Dashboard Preview](https://github.com/user-attachments/assets/412a7f89-6c53-45c0-a919-5f5c799e9454)
+![preview](https://github.com/user-attachments/assets/d5f038ea-5a53-409e-87f9-a13b5a92d3bc)
 
 ## Features
 

@@ -14,31 +14,30 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import metricsData from '@/data/metrics.json';
+import { useData } from '@/context/data-context';
 
-// Process jobs data
-const getRecentJobs = () => {
-  return metricsData.JobsCompleted.slice(-10).reverse().map((job) => ({
+export function Jobs() {
+  const { metrics } = useData();
+
+  if (!metrics) {
+    return null;
+  }
+
+  // Process jobs data
+  const recentJobs = metrics.JobsCompleted.slice(-10).reverse().map((job) => ({
     id: `${job.Year}-${job.Month}-${job.Day}`,
     date: `${job.Month}/${job.Day}/${job.Year}`,
     count: job.Count,
     type: ['AI Training', 'Rendering', 'Scientific', 'Other'][Math.floor(Math.random() * 4)],
     status: 'completed',
   }));
-};
 
-// Calculate success rate from recent jobs
-const calculateSuccessRate = () => {
-  const recentJobs = metricsData.JobsCompleted.slice(-30);
-  const totalJobs = recentJobs.reduce((sum, job) => sum + job.Count, 0);
+  // Calculate success rate from recent jobs
+  const recentMetrics = metrics.JobsCompleted.slice(-30);
+  const totalJobs = recentMetrics.reduce((sum, job) => sum + job.Count, 0);
   const successfulJobs = totalJobs - Math.floor(totalJobs * 0.002); // Assuming 99.8% success rate
-  return ((successfulJobs / totalJobs) * 100).toFixed(1);
-};
+  const successRate = ((successfulJobs / totalJobs) * 100).toFixed(1);
 
-export function Jobs() {
-  const recentJobs = getRecentJobs();
-  const totalJobs = metricsData.TotalJobs;
-  const successRate = calculateSuccessRate();
   const latestJobCount = recentJobs[0]?.count || 0;
 
   return (
@@ -53,7 +52,7 @@ export function Jobs() {
             <CardTitle className="text-sm font-medium">Total Jobs</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{totalJobs.toLocaleString()}</div>
+            <div className="text-2xl font-bold">{metrics.TotalJobs.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground">All time</p>
           </CardContent>
         </Card>

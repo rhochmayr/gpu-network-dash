@@ -1,33 +1,90 @@
 # GPU Network Dashboard
 
-A modern, feature-rich dashboard template for managing distributed GPU networks, built with React, TypeScript, and Tailwind CSS.
+A dashboard template for managing distributed GPU networks. Built with React, TypeScript, and Tailwind CSS, this template provides a comprehensive interface for monitoring network performance, managing nodes, and analyzing distributed computing workloads.
+
+**Note**: This is a template application that currently operates with synthetic data from local files for demonstration purposes. You can easily integrate it with your own API endpoints and data sources.
 
 ![preview](https://github.com/user-attachments/assets/d5f038ea-5a53-409e-87f9-a13b5a92d3bc)
 
 ## Features
 
-- 📊 **Real-time Analytics** - Monitor network performance, job distribution, and node status
-- 🌍 **Interactive Node Map** - Global visualization of node distribution with detailed metrics
-- 📈 **Advanced Charts** - Beautiful data visualization using Recharts
-- 🌓 **Dark/Light Mode** - Seamless theme switching with system preference support
-- 📱 **Responsive Design** - Optimized for all screen sizes
-- 🔐 **Node Management** - Add, remove, and monitor individual nodes
-- 📊 **Performance Tracking** - Track GPU, CPU, and memory usage
-- 💼 **Job Management** - Monitor and manage distributed computing tasks
-- 🏆 **Leaderboard System** - Track top performers and network contributors
-- 🛍️ **Marketplace Integration** - Built-in system for job distribution
-- ⚡ **InventiveNet Calculator** - Reward projections and network analysis
+- [x] **Real-time Analytics** - Monitor network performance, job distribution, and node status
+- [x] **Interactive Node Map** - Global visualization of node distribution with detailed metrics
+- [x] **Advanced Charts** - Beautiful data visualization using Recharts
+- [x] **Dark/Light Mode** - Seamless theme switching with system preference support
+- [x] **Responsive Design** - Optimized for all screen sizes
+- [x] **Node Management** - Add, remove, and monitor individual nodes
+- [x] **Performance Tracking** - Track GPU, CPU, and memory usage
+- [x] **Job Management** - Monitor and manage distributed computing tasks
+- [x] **Leaderboard System** - Track top performers and network contributors
+- [x] **Marketplace Integration** - Built-in system for job distribution
+- [x] **InventiveNet Calculator** - Reward projections and network analysis
 
-## Tech Stack
+## Stack
 
-- ⚛️ React 18
-- 🔷 TypeScript
-- 🎨 Tailwind CSS
-- 📊 Recharts
-- 🗺️ React Leaflet
-- 🎭 Radix UI
-- 🎯 Lucide Icons
-- 🏗️ Vite
+- React 18
+- TypeScript
+- Tailwind CSS
+- Recharts
+- React Leaflet
+- Radix UI
+- Lucide Icons
+- Vite
+
+## Data Schema
+
+The application uses synthetic data with the following structure:
+
+### Node Schema
+```typescript
+interface Node {
+  ID: string;
+  City: string;
+  CountryCode: string;
+  GPU: number;
+  RAM: number;
+  CPU: number;
+  Online: boolean;
+  ConnectedSince: number;
+  Latitude: number;
+  Longitude: number;
+}
+```
+
+### Metrics Schema
+```typescript
+interface Metrics {
+  TotalJobs: number;
+  TotalNodes: number;
+  TotalModules: number;
+  TotalHashrate: number;
+  JobsCompleted: Array<{
+    Year: number;
+    Month: number;
+    Day: number;
+    Count: number;
+  }>;
+  Nodes: Array<{
+    Year: number;
+    Month: number;
+    Day: number;
+    Count: number;
+  }>;
+  Hashrates: any[];
+}
+```
+
+### Leaderboard Schema
+```typescript
+interface LeaderboardEntry {
+  Rank: string;
+  Wallet: string;
+  Energy: number;
+  Points: string;
+  TotalOnlineHours: number;
+  ConsecutiveDaysOnline: number;
+}
+```
 
 ## Getting Started
 
@@ -35,12 +92,17 @@ A modern, feature-rich dashboard template for managing distributed GPU networks,
 # Clone the repository
 git clone https://github.com/yourusername/gpu-network-dash.git
 
+# Navigate to project directory
+cd gpu-network-dash
+
 # Install dependencies
 npm install
 
 # Start the development server
 npm run dev
 ```
+
+The dashboard will be available at `http://localhost:5173`
 
 ## Docker
 
@@ -56,30 +118,38 @@ docker run -p 3000:80 gpu-network-dash
 
 The dashboard will be available at `http://localhost:3000`
 
-
 ## Project Structure
 
 ```
 src/
 ├── components/     # UI components
 │   ├── dashboard/  # Dashboard-specific components
-│   └── ui/        # Reusable UI components
+│   └── ui/        # Reusable UI components (shadcn/ui)
 ├── context/       # React context providers
-├── data/         # Static data and types
+├── data/         # Synthetic data files (JSON)
 ├── hooks/        # Custom React hooks
 ├── lib/          # Utility functions
 └── types/        # TypeScript type definitions
 ```
 
+## Data Integration
+
+To integrate with your own data sources:
+
+1. **API Integration**: Replace the data context in `src/context/data-context.tsx` with your API calls
+2. **Data Format**: Ensure your API returns data matching the schemas described above
+3. **Real-time Updates**: Implement WebSocket connections or polling for live data
+4. **Authentication**: Add authentication layers as needed for your network
+
 ## Customization
 
 The dashboard is built with customization in mind:
 
-- **Theme**: Modify `src/index.css` for color schemes
-- **Components**: Extend `src/components/ui` for custom elements
-- **Data**: Update `src/data` files for your network structure
-- **Charts**: Customize visualizations in respective components
-- **Docker**: Modify `Dockerfile` and `nginx.conf` for deployment needs
+- **Theme**: Modify `src/index.css` and `tailwind.config.js` for color schemes
+- **Components**: Extend `src/components/ui` for custom UI elements
+- **Data Sources**: Update `src/data` files or replace with API integration
+- **Charts**: Customize visualizations in respective dashboard components
+- **Deployment**: Modify `Dockerfile` and `nginx.conf` for production deployment
 
 ## Contributing
 
@@ -87,4 +157,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT © [Your Name]
+MIT License

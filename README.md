@@ -14,11 +14,12 @@ A dashboard template for managing distributed GPU networks. Built with React, Ty
 - [x] **Dark/Light Mode** - Seamless theme switching with system preference support
 - [x] **Responsive Design** - Optimized for all screen sizes
 - [x] **Node Management** - Add, remove, and monitor individual nodes
-- [x] **Performance Tracking** - Track GPU, CPU, and memory usage
-- [x] **Job Management** - Monitor and manage distributed computing tasks
 - [x] **Leaderboard System** - Track top performers and network contributors
-- [x] **Marketplace Integration** - Built-in system for job distribution
 - [x] **InventiveNet Calculator** - Reward projections and network analysis
+- [ ] **Performance Tracking** - Track GPU, CPU, and memory usage
+- [ ] **Job Management** - Monitor and manage distributed computing tasks
+- [ ] **Marketplace Integration** - Built-in system for job distribution
+
 
 ## Stack
 

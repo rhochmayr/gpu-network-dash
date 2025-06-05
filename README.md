@@ -152,7 +152,8 @@ The dashboard is built with customization in mind:
 
 ## Screenshots
 
-<details><summary>Network Overview</summary>![network-overview](https://github.com/user-attachments/assets/2826c8fa-22c5-4639-8ef5-d9bd7338a569)
+<details><summary>Network Overview</summary>
+![network-overview](https://github.com/user-attachments/assets/2826c8fa-22c5-4639-8ef5-d9bd7338a569)
 </details>
 <details><summary>My Nodes</summary>![my-nodes](https://github.com/user-attachments/assets/a7242723-59ef-492f-8566-a83ed6d3fe4a)
 </details>

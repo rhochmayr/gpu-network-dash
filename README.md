@@ -30,6 +30,52 @@ A dashboard template for managing distributed GPU networks. Built with React, Ty
 - Recharts
 - Vite
 
+## Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/gpu-network-dash.git
+
+# Navigate to project directory
+cd gpu-network-dash
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The dashboard will be available at `http://localhost:5173`
+
+## Docker
+
+The project includes a production-ready Docker configuration:
+
+```bash
+# Build the image
+docker build -t gpu-network-dash .
+
+# Run the container
+docker run -p 3000:80 gpu-network-dash
+```
+
+The dashboard will be available at `http://localhost:3000`
+
+## Project Structure
+
+```
+src/
+├── components/     # UI components
+│   ├── dashboard/  # Dashboard-specific components
+│   └── ui/        # Reusable UI components (shadcn/ui)
+├── context/       # React context providers
+├── data/         # Synthetic data files (JSON)
+├── hooks/        # Custom React hooks
+├── lib/          # Utility functions
+└── types/        # TypeScript type definitions
+```
+
 ## Data Schema
 
 The application uses synthetic data with the following structure:
@@ -83,52 +129,6 @@ interface LeaderboardEntry {
   TotalOnlineHours: number;
   ConsecutiveDaysOnline: number;
 }
-```
-
-## Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/gpu-network-dash.git
-
-# Navigate to project directory
-cd gpu-network-dash
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-The dashboard will be available at `http://localhost:5173`
-
-## Docker
-
-The project includes a production-ready Docker configuration:
-
-```bash
-# Build the image
-docker build -t gpu-network-dash .
-
-# Run the container
-docker run -p 3000:80 gpu-network-dash
-```
-
-The dashboard will be available at `http://localhost:3000`
-
-## Project Structure
-
-```
-src/
-├── components/     # UI components
-│   ├── dashboard/  # Dashboard-specific components
-│   └── ui/        # Reusable UI components (shadcn/ui)
-├── context/       # React context providers
-├── data/         # Synthetic data files (JSON)
-├── hooks/        # Custom React hooks
-├── lib/          # Utility functions
-└── types/        # TypeScript type definitions
 ```
 
 ## Data Integration

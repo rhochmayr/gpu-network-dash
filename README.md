@@ -26,10 +26,8 @@ A dashboard template for managing distributed GPU networks. Built with React, Ty
 - React 18
 - TypeScript
 - Tailwind CSS
+- Shadcn/ui
 - Recharts
-- React Leaflet
-- Radix UI
-- Lucide Icons
 - Vite
 
 ## Data Schema

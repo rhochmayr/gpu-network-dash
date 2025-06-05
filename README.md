@@ -152,31 +152,16 @@ The dashboard is built with customization in mind:
 
 ## Screenshots
 
-<details>
-
-<summary>Expand to see screenshots</summary>
-
-### Network Overview
-
-### My Nodes
-
-#### Node Details
-
-### Node Map
-
-### Jobs
-
-### Marketplace
-
-### Analytics
-
-### Leaderboard
-
-### InventiveNet Calculator
-
-### Settings
-
-</details>
+<details><summary>Network Overview</summary></details>
+<details><summary>My Nodes</summary></details>
+<details><summary>Node Details</summary></details>
+<details><summary>Node Map</summary></details>
+<details><summary>Jobs</summary></details>
+<details><summary>Marketplace</summary></details>
+<details><summary>Analytics</summary></details>
+<details><summary>Leaderboard</summary></details>
+<details><summary>InventiveNet Calculator</summary></details>
+<details><summary>Settings</summary></details>
 
 ## Contributing
 

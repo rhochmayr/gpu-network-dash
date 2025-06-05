@@ -152,24 +152,60 @@ The dashboard is built with customization in mind:
 
 ## Screenshots
 
-<details><summary>Network Overview</summary>
+<details>
+
+<summary>Network Overview</summary>
+
 ![network-overview](https://github.com/user-attachments/assets/2826c8fa-22c5-4639-8ef5-d9bd7338a569)
+
 </details>
-<details><summary>My Nodes</summary>![my-nodes](https://github.com/user-attachments/assets/a7242723-59ef-492f-8566-a83ed6d3fe4a)
+
+<details><summary>My Nodes</summary>
+
+![my-nodes](https://github.com/user-attachments/assets/a7242723-59ef-492f-8566-a83ed6d3fe4a)
+
 </details>
-<details><summary>Node Details</summary>![node-details](https://github.com/user-attachments/assets/5d9cdaa8-0e6f-49d3-ba75-4724b5a541f1)
+
+<details><summary>Node Details</summary>
+
+![node-details](https://github.com/user-attachments/assets/5d9cdaa8-0e6f-49d3-ba75-4724b5a541f1)
+
 </details>
-<details><summary>Node Map</summary>![node-map](https://github.com/user-attachments/assets/983fd128-485a-494c-a14f-92b67e936b92)
+
+<details><summary>Node Map</summary>
+
+![node-map](https://github.com/user-attachments/assets/983fd128-485a-494c-a14f-92b67e936b92)
+
 </details>
-<details><summary>Jobs</summary>![jobs](https://github.com/user-attachments/assets/fd080244-87cf-498a-822f-4e7512fdcfc4)
+
+<details><summary>Jobs</summary>
+
+![jobs](https://github.com/user-attachments/assets/fd080244-87cf-498a-822f-4e7512fdcfc4)
+
 </details>
-<details><summary>Marketplace</summary>![marketplace](https://github.com/user-attachments/assets/ee3ac8c0-5709-47f5-9cec-8301f2976689)
+
+<details><summary>Marketplace</summary>
+
+![marketplace](https://github.com/user-attachments/assets/ee3ac8c0-5709-47f5-9cec-8301f2976689)
+
 </details>
-<details><summary>Analytics</summary>![analytics](https://github.com/user-attachments/assets/ca2ae908-ce14-45aa-9671-a20690f22b9e)
+
+<details><summary>Analytics</summary>
+
+![analytics](https://github.com/user-attachments/assets/ca2ae908-ce14-45aa-9671-a20690f22b9e)
+
 </details>
-<details><summary>Leaderboard</summary>![leaderboard-2](https://github.com/user-attachments/assets/b5a28808-d485-4092-979d-787fb925e636)
+
+<details><summary>Leaderboard</summary>
+
+![leaderboard-2](https://github.com/user-attachments/assets/b5a28808-d485-4092-979d-787fb925e636)
+
 </details>
-<details><summary>InventiveNet Calculator</summary>![incentive-net](https://github.com/user-attachments/assets/0f823d66-54d6-4981-8318-ffe346c112c7)
+
+<details><summary>InventiveNet Calculator</summary>
+
+![incentive-net](https://github.com/user-attachments/assets/0f823d66-54d6-4981-8318-ffe346c112c7)
+
 </details>
 
 ## Contributing

@@ -150,6 +150,32 @@ The dashboard is built with customization in mind:
 - **Charts**: Customize visualizations in respective dashboard components
 - **Deployment**: Modify `Dockerfile` and `nginx.conf` for production deployment
 
+<details>
+
+<summary>Screenshots</summary>
+
+### Network Overview
+
+### My Nodes
+
+#### Node Details
+
+### Node Map
+
+### Jobs
+
+### Marketplace
+
+### Analytics
+
+### Leaderboard
+
+### InventiveNet Calculator
+
+### Settings
+
+</details>
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

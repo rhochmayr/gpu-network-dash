@@ -150,9 +150,11 @@ The dashboard is built with customization in mind:
 - **Charts**: Customize visualizations in respective dashboard components
 - **Deployment**: Modify `Dockerfile` and `nginx.conf` for production deployment
 
+## Screenshots
+
 <details>
 
-<summary>Screenshots</summary>
+<summary>Expand to see screenshots</summary>
 
 ### Network Overview
 

@@ -1,6 +1,6 @@
 # GPU Network Dashboard
 
-A dashboard template for managing distributed GPU networks. Built with React, TypeScript, and Tailwind CSS, this template provides a comprehensive interface for monitoring network performance, managing nodes, and analyzing distributed computing workloads.
+A dashboard prototype for managing distributed GPU networks (October 2024). Built with React, TypeScript, and Tailwind CSS, this template provides a comprehensive interface for monitoring network performance, managing nodes, and analyzing distributed computing workloads.
 
 **Note**: This is a template application that currently operates with synthetic data from local files for demonstration purposes. You can easily integrate it with your own API endpoints and data sources.
 
@@ -19,7 +19,6 @@ A dashboard template for managing distributed GPU networks. Built with React, Ty
 - [ ] **Performance Tracking** - Track GPU, CPU, and memory usage
 - [ ] **Job Management** - Monitor and manage distributed computing tasks
 - [ ] **Marketplace Integration** - Built-in system for job distribution
-
 
 ## Stack
 
@@ -136,7 +135,8 @@ interface LeaderboardEntry {
 To integrate with your own data sources:
 
 1. **API Integration**: Replace the data context in `src/context/data-context.tsx` with your API calls
-2. **Data Format**: Ensure your API returns data matching the schemas described above
+2. **Data Format**: Ensure your API returns data matching the schemas or adjust the types accordingly
+3. **Synthetic Data**: For testing, you can modify the JSON files in `src/data` to simulate different scenarios
 3. **Real-time Updates**: Implement WebSocket connections or polling for live data
 4. **Authentication**: Add authentication layers as needed for your network
 
@@ -153,7 +153,3 @@ The dashboard is built with customization in mind:
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License

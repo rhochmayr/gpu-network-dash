@@ -5,7 +5,7 @@ import { DataProvider } from '@/context/data-context';
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <DataProvider>
         <Dashboard />
         <Toaster />
